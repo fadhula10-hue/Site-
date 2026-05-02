@@ -80,9 +80,14 @@ function Header({ active, onNav, onQuote, onAudit, accent }) {
           )}
         </nav>
 
-        <button className="op-btn op-btn--primary op-header__cta" onClick={onQuote}>
-          <span>Demander un devis</span>
-          <Arrow />
+        <button className="op-btn op-btn--audit op-header__cta" onClick={onAudit}>
+          <span className="op-audit__spark" aria-hidden>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <path d="M7 .8l1.6 4.6L13.2 7l-4.6 1.6L7 13.2l-1.6-4.6L.8 7l4.6-1.6z" fill="currentColor" />
+            </svg>
+          </span>
+          <span>Audit gratuit</span>
+          <span className="op-audit__min">15 min</span>
         </button>
       </div>
     </header>);
@@ -179,10 +184,6 @@ function Hero({ onQuote, onAudit, heroVariant }) {
               </span>
               <span>Audit gratuit</span>
               <span className="op-audit__min">15 min</span>
-            </button>
-            <button className="op-btn op-btn--ghost op-btn--lg" onClick={onQuote}>
-              <span>Demander un devis</span>
-              <Arrow />
             </button>
             <button className="op-btn op-btn--ghost op-btn--lg op-hero__reel" onClick={() => {const el = document.getElementById("portfolio");if (el) window.scrollTo({ top: el.offsetTop - 60, behavior: "smooth" });}}>
               <PlayDot />

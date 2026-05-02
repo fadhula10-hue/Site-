@@ -521,6 +521,10 @@ em { font-style: italic; }
   .op-header__inner { grid-template-columns: 1fr auto; }
 }
 
+@media (max-width: 640px) {
+  .op-header__cta .op-audit__min { display: none; }
+}
+
 /* ============== PLATE (image placeholder) ============== */
 .op-plate {
   position: relative; overflow: hidden;
