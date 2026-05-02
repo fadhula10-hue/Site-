@@ -166,7 +166,7 @@ function Hero({ onQuote, onAudit, heroVariant }) {
             <br />
             <em>des clients</em> en <span style={{ color: "rgb(241, 90, 36)" }}>30 jours.</span><br />
           </h1>
-          <p className="op-hero__sub">Olympe Production accompagne les entreprises et les marques à créer des contenus vidéo professionnels, mémorables et qui attirent des clients.
+          <p className="op-hero__sub">Olympe Production accompagne les entreprises à créer des contenus vidéo professionnels, mémorables et qui attirent des clients.
 
 
           </p>
@@ -236,11 +236,11 @@ function Marquee({ items }) {
 /* ---------------- INTRO / À PROPOS ---------------- */
 function Intro() {
   const pillars = [
-  ["01", "Création vidéo", "De l'idée au master final, un savoir-faire complet."],
-  ["02", "Direction artistique", "Une signature visuelle forte, cohérente, sur-mesure."],
-  ["03", "Storytelling", "Des récits qui captent et qui restent en mémoire."],
-  ["04", "Qualité d'image", "Cinéma numérique, optiques premium, étalonnage soigné."],
-  ["05", "Accompagnement", "De la conception à la livraison, un seul interlocuteur."]];
+  ["01", "Accompagnement", "De la conception à la livraison, un seul interlocuteur."],
+  ["02", "Stratégie de contenus", "Un plan vidéo aligné sur vos objectifs business."],
+  ["03", "Direction artistique", "Une signature visuelle forte, cohérente, sur-mesure."],
+  ["04", "Storytelling", "Des récits qui captent et qui restent en mémoire."],
+  ["05", "Qualité d'image", "Cinéma numérique, optiques premium, étalonnage soigné."]];
 
   return (
     <section id="apropos" className="op-section op-intro" data-screen-label="02 Intro">
@@ -254,7 +254,7 @@ function Intro() {
 
       <div className="op-intro__body">
         <div className="op-intro__lede">
-          <p>Olympe Production est une agence de création audiovisuelle indépendant. Nous réalisons des films de marque, des publicités et des contenus digitaux pensés pour convertir votre audience en clients — chaque cadre, chaque lumière, chaque seconde au service du message.
+          <p>Olympe Production est une agence de création audiovisuelle indépendante. Nous réalisons des films de marque, des publicités et des contenus digitaux pensés pour convertir votre audience en clients — chaque cadre, chaque lumière, chaque seconde au service du message.
 
 
 
@@ -323,9 +323,9 @@ function Services({ onQuote, onAudit }) {
           Un éventail complet<br />
           de <em>savoir-faire</em>.
         </h2>
-        <p className="op-section__lede">
-          Chaque projet est unique. Nous combinons nos expertises pour servir votre intention,
-          de la stratégie au master final.
+        <p className="op-section__lede">Un projet, une approche sur mesure. De l’idée à la vidéo finale.
+
+
         </p>
       </div>
 
@@ -443,10 +443,10 @@ function Portfolio({ onAudit }) {
 /* ---------------- MÉTHODE ---------------- */
 function Method({ onAudit }) {
   const steps = [
-  ["01", "Échange & brief", "Compréhension du besoin, des objectifs, des contraintes. Recommandation et chiffrage."],
-  ["02", "Pré-production", "Note d'intention, story-board, repérages, casting, planning, équipe."],
-  ["03", "Tournage", "Direction artistique, image, son, lumière. Une équipe rodée et bienveillante."],
-  ["04", "Montage & livraison", "Montage, étalonnage, sound design, mastering. Livraison aux formats demandés."]];
+  ["01", "Échange & brief", "Compréhension du besoin, des objectifs et des contraintes. Recommandations et chiffrage."],
+  ["02", "Stratégie de contenu", "Clarification du positionnement, mise en place d'un calendrier éditorial et construction d'un tunnel de vente."],
+  ["03", "Production", "Pré-production, tournage et post-production. Direction artistique, image, son, montage, étalonnage et livraison."],
+  ["04", "Analyse & optimisation", "Analyse des performances des contenus et de la stratégie. Ajustements pour améliorer les résultats et maximiser le retour."]];
 
   return (
     <section className="op-section op-method" data-screen-label="05 Method">
@@ -655,7 +655,7 @@ function Footer({ accent }) {
       <div className="op-footer__top">
         <div className="op-footer__brand">
           <Logo size={44} accent={accent} />
-          <p className="op-muted op-tiny" style={{ marginTop: 28, maxWidth: 320 }}>Agence de production audiovisuelle indépendant. Films de marque, publicité, événementiel — pensés comme du cinéma.
+          <p className="op-muted op-tiny" style={{ marginTop: 28, maxWidth: 320 }}>Agence de production audiovisuelle indépendante. Nous créons des films de marque, publicités et contenus événementiels conçus pour générer des clients.
 
 
           </p>
