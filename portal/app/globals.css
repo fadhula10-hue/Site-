@@ -1,0 +1,181 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tokens Olympe Production — identiques au site principal */
+:root {
+  --op-accent: #F15A24;
+  --op-bg: #05051A;
+  --op-bg-2: #080A25;
+  --op-fg: #FFFFFF;
+  --op-mute: rgba(255, 255, 255, 0.58);
+  --op-line: rgba(255, 255, 255, 0.10);
+  --op-line-2: rgba(255, 255, 255, 0.18);
+  --op-serif: "Cormorant Garamond", "Times New Roman", serif;
+  --op-sans: "Inter Tight", system-ui, sans-serif;
+  --op-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  --op-pad: clamp(20px, 4.5vw, 88px);
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--op-bg);
+  color: var(--op-fg);
+  font-family: var(--op-sans);
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "ss01", "cv11";
+  letter-spacing: -0.005em;
+}
+::selection { background: var(--op-accent); color: #fff; }
+
+/* === Composants utilitaires repris du site === */
+@layer components {
+  .op-eyebrow {
+    font-family: var(--op-mono);
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: var(--op-mute);
+  }
+  .op-h1 {
+    font-family: var(--op-serif);
+    font-weight: 400;
+    font-size: clamp(48px, 7vw, 120px);
+    line-height: 0.94;
+    letter-spacing: -0.025em;
+  }
+  .op-h2 {
+    font-family: var(--op-serif);
+    font-weight: 400;
+    font-size: clamp(40px, 6vw, 88px);
+    line-height: 0.98;
+    letter-spacing: -0.018em;
+  }
+  .op-h3 {
+    font-family: var(--op-serif);
+    font-weight: 400;
+    font-size: clamp(22px, 2vw, 30px);
+    letter-spacing: -0.01em;
+  }
+
+  /* Boutons */
+  .op-btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    height: 44px; padding: 0 18px;
+    border-radius: 999px;
+    font-size: 13px; letter-spacing: 0.04em;
+    font-weight: 500;
+    transition: transform .25s, background .25s, color .25s, border-color .25s, box-shadow .25s;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+  .op-btn--lg { height: 54px; padding: 0 26px; font-size: 14px; }
+  .op-btn--sm { height: 38px; padding: 0 14px; font-size: 12px; }
+  .op-btn--primary { background: var(--op-accent); color: #fff; }
+  .op-btn--primary:hover { background: #fff; color: var(--op-bg); transform: translateY(-1px); }
+  .op-btn--ghost {
+    background: transparent;
+    border: 1px solid var(--op-line-2);
+    color: var(--op-fg);
+  }
+  .op-btn--ghost:hover { border-color: var(--op-accent); color: var(--op-accent); }
+  .op-btn--audit {
+    background: var(--op-accent); color: #fff;
+    box-shadow: 0 8px 24px -8px rgba(241,90,36,0.55), 0 0 0 1px rgba(255,255,255,0.06) inset;
+  }
+  .op-btn--audit:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 14px 36px -8px rgba(241,90,36,0.7), 0 0 0 1px rgba(255,255,255,0.10) inset, 0 0 28px -4px rgba(241,90,36,0.5);
+  }
+  .op-btn:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+
+  /* Cartes / panneaux */
+  .op-card {
+    background: var(--op-bg-2);
+    border: 1px solid var(--op-line);
+    border-radius: 4px;
+    padding: clamp(20px, 2.4vw, 32px);
+  }
+
+  /* Champs de formulaire (style site Olympe : trait sous le champ) */
+  .op-field { display: flex; flex-direction: column; gap: 8px; }
+  .op-field-label {
+    font-family: var(--op-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--op-mute);
+  }
+  .op-input {
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid var(--op-line-2);
+    padding: 10px 0;
+    font-size: 15px;
+    font-family: var(--op-sans);
+    color: var(--op-fg);
+    outline: none;
+    transition: border-color .25s;
+    border-radius: 0;
+    width: 100%;
+  }
+  .op-input:focus { border-bottom-color: var(--op-accent); }
+  .op-textarea {
+    background: transparent;
+    border: 1px solid var(--op-line-2);
+    border-radius: 4px;
+    padding: 12px;
+    font-size: 15px;
+    font-family: var(--op-sans);
+    color: var(--op-fg);
+    outline: none;
+    resize: vertical;
+    transition: border-color .25s;
+    min-height: 96px;
+    width: 100%;
+  }
+  .op-textarea:focus { border-color: var(--op-accent); }
+
+  /* Pilule / badge */
+  .op-chip {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--op-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: rgba(241, 90, 36, 0.10);
+    color: var(--op-accent);
+    border: 1px solid rgba(241, 90, 36, 0.25);
+  }
+  .op-chip--mute {
+    background: transparent;
+    border-color: var(--op-line-2);
+    color: var(--op-mute);
+  }
+  .op-chip--ok {
+    background: rgba(80, 200, 120, 0.10);
+    border-color: rgba(80, 200, 120, 0.30);
+    color: rgb(120, 220, 160);
+  }
+
+  /* Logo "OLYMPE PRODUCTION" — typographie identique au site */
+  .op-logo {
+    font-family: var(--op-serif);
+    font-weight: 700;
+    line-height: 1.0;
+    letter-spacing: 0.005em;
+    text-align: left;
+    display: inline-flex; flex-direction: column;
+    text-transform: uppercase;
+  }
+  .op-logo__row { display: inline; }
+}
+
+/* Scrollbar discrète */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--op-bg); }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.10); border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.20); }
